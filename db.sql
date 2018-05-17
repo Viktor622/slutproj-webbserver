@@ -40,3 +40,12 @@ INSERT INTO users (UserId, Username, Adress, Mail, Password) VALUES
 (5, 'fsdogj', NULL, 'ffasf@gsdg.se', 'bajsvÃ¤gen 10d'),
 (6, 'asd', 'asd', 'asd', 'asd'),
 (7, 'qwe', 'qwe', 'qwe@qwe.qwe', 'qwe');
+
+
+CREATE TABLE orders( 
+produkt_id int(8),
+kund int(8),
+quantity int(8),
+FOREIGN KEY (produkt_id) REFERENCES produkter(id),
+FOREIGN KEY (kund) REFERENCES users(UserId)
+);

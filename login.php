@@ -50,10 +50,10 @@ else if( isset($_POST['username']) && isset($_POST['password'])){
 	$result = mysqli_query($dbc,$query);
 	
 	// Finns en rad med resultat så har användaren skrivit rätt information
-	if(mysqli_fetch_array($result)){
+	if($row = mysqli_fetch_array($result)){
 		//echo "Du är nu inloggad!";
 		$_SESSION['loggedIn'] = true;
-		$_SESSION['username'] = $username;
+		$_SESSION['id'] = $row['UserId'];
 	}
 	else{
 		echo "Fel uppgifter, försök igen...";
