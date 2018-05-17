@@ -47,7 +47,9 @@
         else{
 	?>
 		<a href ="logout.php"> <button> Logga ut </button></a>	
-		<a href ="nyheter.html"> <button> Nyheter </button></a>)
+		<a href ="nyheter.html"> <button> Nyheter </button></a>
+		<a href ="omoss.html"> <button> Om oss </button></a>	
+
 	<?php
 	$query = "SELECT * FROM produkter";
 	$result = mysqli_query($dbc,$query);
