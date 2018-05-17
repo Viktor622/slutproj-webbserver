@@ -1,4 +1,5 @@
-
+CREATE DATABASE shop;
+USE shop;
 
 CREATE TABLE `lager` (
   `produkt_id` int(8) DEFAULT NULL,
