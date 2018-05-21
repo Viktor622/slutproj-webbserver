@@ -1,13 +1,13 @@
 <?php
 
 session_start();
+	$dbc = mysqli_connect("localhost","root","","shop");
 
   if( isset($_POST['Titel']) && isset($_POST['Content'])){
 	
 	$titel = $_POST['Titel'];
 	$content = $_POST['Content'];
 	
-	$dbc = mysqli_connect("localhost","root","","shop");
 	
  $query = "INSERT INTO news (Titel,Content) VALUES ('$titel','$content')";
 
@@ -27,7 +27,22 @@ session_start();
 
 <body>
 
-<p> Hor choklad kommer inom kort jaok ge oss  betyg bitch </p>
+<a href ="index.php"> <button> Shop </button><a/>
+
+<?php
+
+$query = "SELECT * FROM news";
+	$result = mysqli_query($dbc,$query);
+	
+	while($row = mysqli_fetch_array($result)){
+		
+		echo "<b>".$row['titel'] . "</b><br>";
+		echo $row['content'] . "<br><br><br>";
+	}
+		
+		?>
+
+
 
 <form action = "nyheter.php" method = "POST">
 		
